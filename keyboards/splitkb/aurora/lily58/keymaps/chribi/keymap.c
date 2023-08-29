@@ -21,20 +21,30 @@
 #define TASKMGR RCS(KC_ESC)
 #define C_A_DEL LCA(KC_DEL)
 
+// home row mods
+#define A_WIN MT(MOD_LGUI, KC_A)
+#define S_ALT MT(MOD_LALT, KC_S)
+#define D_CTRL MT(MOD_LCTL, KC_D)
+#define F_SFT MT(MOD_LSFT, KC_F)
+#define J_SFT MT(MOD_RSFT, KC_J)
+#define K_CTRL MT(MOD_RCTL, KC_K)
+#define L_ALT MT(MOD_LALT, KC_L)
+#define SCL_WIN MT(MOD_RGUI, KC_SCLN)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_BASE] = LAYOUT(
     KC_GRV , KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                   KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_MINS,
     KC_TAB , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                   KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_EQL ,
-    ESC_CTL, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   ,                   KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, KC_QUOT,
+    ESC_CTL, A_WIN  , S_ALT  , D_CTRL , F_SFT  , KC_G   ,                   KC_H   , J_SFT  , K_CTRL , L_ALT  , SCL_WIN, KC_QUOT,
     KC_LSFT, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_LBRC, KC_RBRC, KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_RSFT,
                                KC_LCTL, KC_LALT, TT(_FN), KC_SPC , KC_ENT , KC_BSPC, MO(2)  , KC_RGUI
 ),
 
 [_FN] = LAYOUT(
     KC_F11 , KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  ,                   KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_F12 ,
-    _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_PSCR,                   CW_TOGG, KC_CAPS, _______, _______, KC_INS , C_A_DEL,
-    _______, A_UML  , SZ_LIG , O_UML  , U_UML  , _______,                   KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_DEL , TASKMGR,
+    _______, A_UML  , SZ_LIG , O_UML  , U_UML  , KC_PSCR,                   CW_TOGG, KC_CAPS, _______, _______, KC_INS , TASKMGR,
+    _______, _______, _______, _______, _______, _______,                   KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_DEL , C_A_DEL,
     _______, _______, _______, _______, _______, KC_APP , _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END , KC_BSLS, _______,
                                _______, _______, _______, _______, _______, _______, TG(3)  , _______),
 
