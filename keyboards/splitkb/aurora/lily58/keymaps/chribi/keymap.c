@@ -98,10 +98,10 @@ bool rgb_matrix_indicators_user(void) {
            rgb_matrix_set_color_all(255, 0, 255);
            break;
         case _FN:
-           rgb_matrix_set_color_all(255, 0, 0);
+           rgb_matrix_set_color_all(240, 0, 80);
            break;
         case _SYMB:
-           rgb_matrix_set_color_all(255, 50, 150);
+           rgb_matrix_set_color_all(80, 0, 240);
            break;
         case _MEDIA:
            rgb_matrix_set_color_all(0, 0, 255);
