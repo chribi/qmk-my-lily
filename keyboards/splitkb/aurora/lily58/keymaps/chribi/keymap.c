@@ -81,6 +81,29 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 };
 #endif // defined(ENCODER_ENABLE) && defined(ENCODER_MAP_ENABLE)
 
+bool rgb_matrix_indicators_user(void) {
+    uint8_t layer = get_highest_layer(layer_state);
 
+    switch (layer) {
+        case _BASE:
+           rgb_matrix_set_color_all(255, 0, 255);
+           break;
+        case _FN:
+           rgb_matrix_set_color_all(255, 0, 0);
+           break;
+        case _SYMB:
+           rgb_matrix_set_color_all(255, 50, 150);
+           break;
+        case _MEDIA:
+           rgb_matrix_set_color_all(0, 0, 255);
+           break;
+        case _MOUSE:
+           rgb_matrix_set_color_all(0, 255, 0);
+           break;
+       default:
+           break;
+    }
 
+    return false;
+}
 
