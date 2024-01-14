@@ -9,6 +9,7 @@
 #define M_FN MO(_FN)
 #define M_SYMB MO(_SYMB)
 #define M_MEDIA MO(_MEDIA)
+#define M_MOUSE MO(_MOUSE)
 #define T_MOUSE TG(_MOUSE)
 
 #define ESC_CTL MT(MOD_LCTL, KC_ESC)
@@ -27,7 +28,7 @@
 #define TASKMGR RCS(KC_ESC)
 #define C_A_DEL LCA(KC_DEL)
 
-// home row mods
+// home row mods [base layer]
 #define A_WIN MT(MOD_LGUI, KC_A)
 #define S_ALT MT(MOD_LALT, KC_S)
 #define D_CTRL MT(MOD_LCTL, KC_D)
@@ -36,6 +37,19 @@
 #define K_CTRL MT(MOD_RCTL, KC_K)
 #define L_ALT MT(MOD_LALT, KC_L)
 #define SCL_WIN MT(MOD_RGUI, KC_SCLN)
+
+// home row mods [symb layer]
+#define _1_WIN MT(MOD_LGUI, KC_1)
+#define _2_ALT MT(MOD_LALT, KC_2)
+#define _3_CTRL MT(MOD_LCTL, KC_3)
+#define _4_SFT MT(MOD_LSFT, KC_4)
+#define _7_SFT MT(MOD_RSFT, KC_7)
+#define _8_CTRL MT(MOD_RCTL, KC_8)
+#define _9_ALT MT(MOD_LALT, KC_9)
+#define _0_WIN MT(MOD_RGUI, KC_0)
+
+// Space on tap, SYMB layer on hold
+#define SYMB_SPC LT(_SYMB, KC_SPC)
 
 // Symbols ( ) { } < > "
 #define L_PAREN LSFT(KC_9)
@@ -53,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   ,                   KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_EQL ,
     ESC_CTL, A_WIN  , S_ALT  , D_CTRL , F_SFT  , KC_G   ,                   KC_H   , J_SFT  , K_CTRL , L_ALT  , SCL_WIN, KC_QUOT,
     KC_LSFT, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_LBRC, KC_RBRC, KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_RSFT,
-                               KC_LCTL, M_SYMB , M_FN   , KC_SPC , KC_ENT , KC_BSPC, M_SYMB , M_MEDIA),
+                               KC_LCTL, M_MOUSE, M_FN   , SYMB_SPC, KC_ENT, KC_BSPC, M_MEDIA, M_MEDIA),
 
 [_FN] = LAYOUT(
     KC_F11 , KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  ,                   KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_F12 ,
@@ -64,8 +78,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_SYMB] = LAYOUT(
     KC_F11 , KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  ,                   KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_F12 ,
-    KC_GRV , KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                   KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_MINS,
     _______, L_ANGLE, L_BRACE, L_PAREN, KC_LBRC, KC_QUOT,                   DQUOT  , KC_RBRC, R_PAREN, R_BRACE, R_ANGLE, _______,
+    KC_GRV , _1_WIN , _2_ALT , _3_CTRL, _4_SFT , KC_5   ,                   KC_6   , _7_SFT , _8_CTRL, _9_ALT , _0_WIN , KC_MINS,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
                                _______, _______, _______, _______, _______, _______, _______, _______),
 
