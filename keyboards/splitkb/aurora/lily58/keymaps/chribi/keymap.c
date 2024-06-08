@@ -130,3 +130,41 @@ bool rgb_matrix_indicators_user(void) {
     return false;
 }
 
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        // left pinky
+        case A_WIN:
+        case _1_WIN:
+            return 230;
+        // right pinky
+        case SCL_WIN:
+        case _0_WIN:
+            return 190;
+
+        // ring fingers
+        case S_ALT:
+        case _2_ALT:
+        case L_ALT:
+        case _9_ALT:
+            return 200;
+
+        // middle fingers
+        case D_CTRL:
+        case _3_CTRL:
+        case K_CTRL:
+        case _8_CTRL:
+            return 180;
+
+        // index fingers
+        case F_SFT:
+        case _4_SFT:
+        case J_SFT:
+        case _7_SFT:
+            return 190;
+
+        default:
+            return TAPPING_TERM;
+
+    }
+}
+
